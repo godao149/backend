@@ -1,0 +1,60 @@
+﻿@using ProvaBackEnd.Controllers
+@model IEnumerable<ProvaBackEnd.Models.ViewModel.ValoresLigacoesViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Calculo de Valores</h2>
+
+@Html.ActionLink("Tabela de Valores","Index","Valores")
+
+
+<table class="table">
+    <tr>
+        <th>
+            Origem
+        </th>
+        <th>
+            Destino
+        </th>
+        <th>
+            Tempo
+        </th>
+        <th>
+            Plano FaleMais
+        </th>
+        <th>
+            Com Mais
+        </th>
+        <th>
+            Sem FaleMais
+        </th>
+
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valores.Origem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valores.Destino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ligacoes.Tempo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Ligacoes.Plano)
+            </td>
+            
+
+            
+        </tr>
+    }
+
+</table>
